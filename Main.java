@@ -6,8 +6,10 @@ public class Main {
 
         int pilihan;
         System.out.println("Selamat datang di ALGOSMOOTHIE!"); 
+        System.out.println();
         System.out.println("1. Login"); 
         System.out.println("2. Menu Customer"); 
+        System.out.println();
         while(true){
         System.out.print("Pilih dengan angka : "); 
         if(scanner.hasNextInt()){
@@ -17,6 +19,7 @@ public class Main {
         }else{System.out.println("Input harus berupa angka !");}
         scanner.nextLine();    
     }
+    System.out.println();
 
         if(pilihan==2){
             MenuCustomer menuCustomer = new MenuCustomer();
@@ -44,10 +47,12 @@ public class Main {
             System.out.println("Password tidak boleh kosong !");
         }
         }
+        System.out.println();
 
         boolean statuslogin = cUser.authenticate(username, password);
         if(statuslogin == true){
             System.out.println("Selamat anda berhasil login !");
+            System.out.println();
             String getRole = cUser.getRole(username, password);
             String getUsername = cUser.getUsername(username, password);
 

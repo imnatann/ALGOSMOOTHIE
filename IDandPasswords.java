@@ -40,6 +40,15 @@ public class IDandPasswords {
         return null;
     }
 
+    public void printEmployee(){
+        for (User u : users ){
+            if(u.role == "Kasir"){
+                System.out.println("Nama Karyawan : " + u.username);
+                System.out.println("Job : " + u.role);
+            System.out.println("\n---------------------");
+            }
+        }
+    }
     //fungsi login
     public boolean authenticate(String user, String pass) {
         for (User u : users) {

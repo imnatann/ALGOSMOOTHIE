@@ -1,5 +1,6 @@
 import java.util.*;
 class Smoothie {
+        int idmenu;
         String namamenu;
         String deskripsi;
         double harga;
@@ -37,6 +38,10 @@ public class Menu {
             }
             System.out.println("\n---------------------");
         }
+    }
+
+    public void chooseMenu(){
+        
     }
 
 }
