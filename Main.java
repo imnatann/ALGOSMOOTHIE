@@ -3,10 +3,26 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         IDandPasswords cUser = new IDandPasswords();
-       
-        System.out.println("Selamat datang di ALGOSMOOTHIE!"); 
 
-        while (true){
+        int pilihan;
+        System.out.println("Selamat datang di ALGOSMOOTHIE!"); 
+        System.out.println("1. Login"); 
+        System.out.println("2. Menu Customer"); 
+        while(true){
+        System.out.print("Pilih dengan angka : "); 
+        if(scanner.hasNextInt()){
+        pilihan = scanner.nextInt();
+        scanner.nextLine();
+        break;
+        }else{System.out.println("Input harus berupa angka !");}
+        scanner.nextLine();    
+    }
+
+        if(pilihan==2){
+            MenuCustomer menuCustomer = new MenuCustomer();
+            menuCustomer.cust(args);
+            
+        }else{ while (true){
         String username;
         while (true) {
             System.out.print("Masukan Username : ");
@@ -32,10 +48,34 @@ public class Main {
         boolean statuslogin = cUser.authenticate(username, password);
         if(statuslogin == true){
             System.out.println("Selamat anda berhasil login !");
+            String getRole = cUser.getRole(username, password);
+            String getUsername = cUser.getUsername(username, password);
+
+         
+        switch (getRole) {
+            case "Owner":
+            MenuOwner menuOwner = new MenuOwner();
+            menuOwner.owner(username);
             break;
+
+             case "Kasir":
+            MenuKasir menuKasir = new MenuKasir();
+            menuKasir.kasir(username);
+            break;
+
+  
+
+            default:
+            throw new AssertionError();
+        }
+        break;
         }else{
             System.out.println("Login tidak valid");
-        }
-    }
+        }}
+       
+
+        
+        
+    
 }
-}
+}}

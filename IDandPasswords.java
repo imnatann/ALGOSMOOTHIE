@@ -23,11 +23,30 @@ public class IDandPasswords {
     new User("Jeslyn","Jeslyn123","Kasir")
     ));
 
+    public String getRole(String user, String password){
+        for (User u : users) {
+            if(u.username.equals(user) && u.password.equals(password)){
+                return u.role ;
+            }
+        }
+        return null;
+    }
+     public String getUsername(String user, String password){
+        for (User u : users) {
+            if(u.username.equals(user) && u.password.equals(password)){
+                return u.username;
+            }
+        }
+        return null;
+    }
+
     //fungsi login
     public boolean authenticate(String user, String pass) {
         for (User u : users) {
             if(u.username.equals(user)&& u.password.equals(pass)){
                 return true;
+                
+
             }
         }
         return false;
