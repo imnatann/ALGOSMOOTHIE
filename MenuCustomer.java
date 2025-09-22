@@ -6,12 +6,10 @@ public class MenuCustomer {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Selamat datang di AlgoSmoothie");
         System.out.println("---------------------");
-
+while(true){
         fungsiMenu.printMenus();
-        System.out.print("Pilih Menu Dengan Angka : ");
-        int pilihan = scanner.nextInt();
-
-        
+        fungsiMenu.chooseMenu();
+}
         
     }
 }
